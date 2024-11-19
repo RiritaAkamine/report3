@@ -34,11 +34,12 @@ public class Enemy {
      * @param hero 攻撃対象
      */
     public void attack(Hero hero){
-        if (dead) { // 敵が死亡している場合
-            System.out.printf("%sは既に死んでいるため、攻撃できません。\n", name);
-            return; // メソッドを終了
+        if (dead) { // 敵が死んでいる場合
+            System.out.printf("%sを攻撃できません\n", name);
+            return; 
         }
-        
+
+        //敵が生きている場合
         int damage = (int)(Math.random() * attack);
         System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.name, damage);
         hero.wounded(damage);

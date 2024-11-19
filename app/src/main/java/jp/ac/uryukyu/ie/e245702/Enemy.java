@@ -38,7 +38,6 @@ public class Enemy {
             System.out.printf("%sを攻撃できません\n", name);
             return; 
         }
-
         //敵が生きている場合
         int damage = (int)(Math.random() * attack);
         System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.name, damage);

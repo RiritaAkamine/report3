@@ -17,8 +17,14 @@ class EnemyTest {
         int defaultHeroHp = 100;
         Hero demoHero = new Hero("デモ勇者", defaultHeroHp, 100);
         Enemy slime = new Enemy("スライムもどき", 10, 100);
+
+        // ヒーローがスライムを攻撃
         demoHero.attack(slime);
+
+        // スライムがヒーローを攻撃（死亡しているためダメージを与えられない）
         slime.attack(demoHero);
-        assertEquals(defaultHeroHp, demoHero.hitPoint);
+
+        // ヒーローのHPが変わっていないことを検証
+        assertEquals(defaultHeroHp, demoHero.getHitPoint());
     }
 }
